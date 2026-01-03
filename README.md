@@ -10,7 +10,7 @@ This project focuses on learning by building, rather than just theory.
 
 ---
 
-## 🌱 What I Used & Learned
+## What I Used & Learned
 - **HTML**: Page structure, forms, and navigation
 - **CSS**: Layout, styling, hover effects, and consistent UI
 - **JavaScript**:
@@ -22,7 +22,7 @@ This project focuses on learning by building, rather than just theory.
 
 ---
 
-## 🔐 How It Works
+## How It Works
 - Users register and log in
 - Each user has their own private set of memories
 - Memories can be added and deleted
@@ -31,7 +31,7 @@ This project focuses on learning by building, rather than just theory.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 animal-love-wall/
 ├─ register.html # User registration page
 ├─ login.html # User login page
@@ -43,7 +43,7 @@ animal-love-wall/
 
 ---
 
-## ⚠️ Note
+## Note
 This is a frontend-only, educational project.  
 It does not use backend authentication and is not meant for production use.
 
