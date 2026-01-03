@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animal Love Wall</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    if (!localStorage.getItem("currentUser")) {
+      window.location.href = "login.html";
+    }
+  </script>
+</head>
+<body>
+
+<div class="container">
+  <div class="top-bar">
+    <h1>🐾 Animal Love Wall</h1>
+    <button class="logout" onclick="logout()">Logout</button>
+  </div>
+
+  <p class="subtitle">A quiet place for my animal memories</p>
+
+  <div class="form">
+    <input type="text" id="animal" placeholder="Animal (dog, cat, squirrel)">
+    <input type="text" id="name" placeholder="Animal's name (optional)">
+    <input type="text" id="place" placeholder="Where did you meet?">
+    <input type="text" id="feeling" placeholder="How did it make you feel?">
+    <button id="addBtn">Add Memory</button>
+  </div>
+
+  <div id="wall"></div>
+</div>
+
+<script src="script.js"></script>
+<script>
+function logout() {
+  localStorage.removeItem("currentUser");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

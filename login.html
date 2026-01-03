@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Animal Love Wall</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>🐾 Welcome Back</h1>
+  <p class="subtitle">Login to continue</p>
+
+  <div class="form">
+    <input type="text" id="loginUsername" placeholder="Username">
+    <input type="password" id="loginPassword" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <p class="link">
+    New here? <a href="register.html">Create an account</a>
+  </p>
+</div>
+
+<script>
+function login() {
+  const username = document.getElementById("loginUsername").value.trim();
+  const password = document.getElementById("loginPassword").value.trim();
+
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+
+  const user = users.find(
+    u => u.username === username && u.password === password
+  );
+
+  if (!user) {
+    alert("Invalid credentials ❌");
+    return;
+  }
+
+  localStorage.setItem("currentUser", username);
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

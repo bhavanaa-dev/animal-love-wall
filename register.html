@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | Animal Love Wall</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>🐾 Create Account</h1>
+  <p class="subtitle">Start your Animal Love Wall</p>
+
+  <div class="form">
+    <input type="text" id="regUsername" placeholder="Username">
+    <input type="password" id="regPassword" placeholder="Password">
+    <button onclick="register()">Register</button>
+  </div>
+
+  <p class="link">
+    Already have an account? <a href="login.html">Login</a>
+  </p>
+</div>
+
+<script>
+function register() {
+  const username = document.getElementById("regUsername").value.trim();
+  const password = document.getElementById("regPassword").value.trim();
+
+  if (!username || !password) {
+    alert("Please fill all fields 🐾");
+    return;
+  }
+
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+
+  if (users.find(u => u.username === username)) {
+    alert("Username already exists ❌");
+    return;
+  }
+
+  users.push({
+    username,
+    password,
+    memories: []
+  });
+
+  localStorage.setItem("users", JSON.stringify(users));
+  alert("Registration successful 💚 Please login");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
